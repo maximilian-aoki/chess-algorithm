@@ -3,12 +3,8 @@ import './static/reset.css';
 import './static/style.css';
 
 // import modules
-import getBoardGraph from './assets/graph';
-import Queue from './assets/queue';
+import Board from './assets/Board';
 
 // TEST
-const graph = getBoardGraph();
-// console.log(graph);
-
-const queue = new Queue();
-// console.log(queue);
+const board = new Board(8);
+console.log(board.getMoves('11', '34'));
