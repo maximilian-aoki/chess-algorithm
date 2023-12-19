@@ -7,4 +7,4 @@ import Board from './assets/Board';
 
 // TEST
 const board = new Board(8);
-console.log(board.getMoves('11', '34'));
+console.log(board.getMoves('1,1', '1,2'));

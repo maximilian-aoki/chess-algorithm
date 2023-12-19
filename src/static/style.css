@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+
+  /* color palette */
+  --gunmetal: #1b2432ff;
+  --floral-white: #fffcf2ff;
+  --raisin-black: #2c2b3cff;
+  --onyx: #403f4cff;
+  --indian-red: #b76d68ff;
+
+  /* document settings */
+  font-size: 16px;
+  background-color: var(--gunmetal);
+  color: var(--floral-white);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
+body {
+  font-family: 'Oswald', sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template: 7rem 4rem 35rem 1fr 10rem / 1fr 900px 1fr;
+  grid-template-areas:
+    '....    title  ....'
+    '....    messages  ....'
+    '....    content ....'
+    '....    ....    ....'
+    'footer  footer  footer';
+  gap: 1rem;
+}
+/* for debugging */
+* {
+  outline: 1px solid grey;
+}
+
+/* LAYOUT */
+.grid {
+  display: grid;
+}
+
+/* HEADER */
+.title {
+  grid-area: title;
+  justify-content: center;
+  align-content: end;
+  font-size: 4rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.4ch;
+}
+
+/* MESSAGES */
+.messages {
+  grid-area: messages;
+  place-content: center;
+}
+.inner-messages {
+  font-weight: 200;
+  letter-spacing: 0.2ch;
+  width: 60ch;
+  text-align: center;
+}
+.inner-messages > p {
+  margin-top: 0.4rem;
+}
+
+/* CONTENT */
+.content {
+  grid-area: content;
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+}

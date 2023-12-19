@@ -16,7 +16,7 @@ export default function getBoardGraph(size = 8, moves = knightMoves) {
   const graph = {};
   for (let i = 1; i <= size; i += 1) {
     for (let j = 1; j <= size; j += 1) {
-      graph[`${i}${j}`] = getSquareAdjacents(i, j, size, moves);
+      graph[`${i},${j}`] = getSquareAdjacents(i, j, size, moves);
     }
   }
 
@@ -37,7 +37,7 @@ function getSquareAdjacents(i, j, size, moves) {
       jTransform >= 1 &&
       jTransform <= size
     ) {
-      adjacents.push(`${iTransform}${jTransform}`);
+      adjacents.push(`${iTransform},${jTransform}`);
     }
   });
 

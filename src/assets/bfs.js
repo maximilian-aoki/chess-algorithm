@@ -4,6 +4,7 @@ import Queue from './queue';
 export default function getShortestPath(graphObj, startVertex, endVertex) {
   const pathData = getPathBFS(graphObj, endVertex);
   const movesArr = [startVertex];
+  const { distance } = pathData[startVertex];
 
   let tmpVertex = startVertex;
   while (tmpVertex !== endVertex && tmpVertex) {
@@ -14,7 +15,7 @@ export default function getShortestPath(graphObj, startVertex, endVertex) {
     console.log('no path to end vertex');
     return null;
   }
-  return movesArr;
+  return { movesArr, distance };
 }
 
 // create an object whose keys are each vertex and values are a data obj
