@@ -1,6 +1,7 @@
 import Queue from './queue';
 
-// return shortest path of vertices from start to finish, if it exists
+// return both the shortest path of vertices from start to finish, if it exists
+// and the distance from start to finish in an object
 export default function getShortestPath(graphObj, startVertex, endVertex) {
   const pathData = getPathBFS(graphObj, endVertex);
   const movesArr = [startVertex];
