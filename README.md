@@ -2,6 +2,8 @@
 
 A project demonstrating the use of data structures and algorithms in finding the shortest path for a knight on a chessboard.
 
+link to demo: https://maximilian-aoki.github.io/chess-algorithm/
+
 DATA STRUCTURES
 
 - an adjacency graph that maps all knight moves for every square - dynamically build depending on chosen board size
