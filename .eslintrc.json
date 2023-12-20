@@ -12,6 +12,7 @@
     "no-console": "off",
     "import/no-extraneous-dependencies": "off",
     "no-use-before-define": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-unused-vars": "warn"
   }
 }

@@ -129,21 +129,29 @@ body {
   background-color: var(--indian-red);
   color: var(--floral-white);
 }
+.settings > button:disabled {
+  cursor: auto;
+  background-color: grey;
+  color: rgb(167, 167, 167);
+}
 /* board */
 .board-frame {
   outline: 5px solid var(--floral-white);
   border-radius: 0.3rem;
   overflow: hidden;
 
-  --square-size: 140px;
+  --square-factor: 4;
 }
 .board {
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(auto-fit, var(--square-size));
+  grid-template-columns: repeat(auto-fit, calc(560px / var(--square-factor)));
 }
-.board > div {
-  outline: 1px solid grey;
+.board > div.light {
+  background-color: var(--onyx);
+}
+.board > div.dark {
+  background-color: var(--raisin-black);
 }
 
 /* FOOTER */
