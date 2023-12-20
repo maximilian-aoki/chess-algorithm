@@ -1,0 +1,320 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* color palette */
+  --gunmetal: #1b2432ff;
+  --gunmetal-light: rgb(32, 41, 55);
+  --floral-white: #fffcf2ff;
+  --floral-grey: rgb(197, 193, 177);
+  --raisin-black: #2c2b3cff;
+  --onyx: #403f4cff;
+  --indian-red: #b76d68ff;
+
+  /* document settings */
+  font-size: 16px;
+  letter-spacing: 0.2ch;
+  background-color: var(--gunmetal);
+  color: var(--floral-white);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* import font */
+body {
+  font-family: 'Oswald', sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template: 7rem 4rem 35rem 1fr 10rem / 1fr 750px 1fr;
+  grid-template-areas:
+    '....    title  ....'
+    '....    messages  ....'
+    '....    content ....'
+    '....    ....    ....'
+    'footer  footer  footer';
+  gap: 1rem;
+}
+/* for debugging */
+* {
+  /* outline: 1px solid grey; */
+}
+
+/* LAYOUT */
+.grid {
+  display: grid;
+}
+
+/* HEADER */
+.title {
+  grid-area: title;
+  justify-content: center;
+  align-content: end;
+  font-size: 3.5rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.4ch;
+}
+
+/* MESSAGES */
+.messages {
+  grid-area: messages;
+  place-content: center;
+}
+.inner-messages {
+  font-weight: 200;
+  width: 60ch;
+  text-align: center;
+}
+.inner-messages > p {
+  margin-bottom: 0.4rem;
+}
+
+/* CONTENT */
+.content {
+  grid-area: content;
+  grid-template-columns: 1fr 560px;
+  gap: 1rem;
+}
+/* settings */
+.settings > h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+.settings > div {
+  margin-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  height: 2rem;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 0.5rem;
+  grid-auto-flow: column;
+  font-size: 1.2rem;
+}
+.settings > div > input {
+  appearance: none;
+  cursor: pointer;
+  margin: 0.2rem;
+  padding: 0;
+  background-color: var(--onyx);
+  border: 2px solid var(--floral-grey);
+  border-radius: 0.2rem;
+}
+.settings > div > input:hover {
+  background-color: var(--floral-grey);
+}
+.settings > div > input:checked {
+  background-color: var(--indian-red);
+}
+.settings > div > label {
+  align-self: center;
+  cursor: pointer;
+}
+.settings > button {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  appearance: none;
+  width: 6.5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--floral-white);
+  color: var(--gunmetal);
+  cursor: pointer;
+}
+.settings > button:hover {
+  background-color: var(--indian-red);
+  color: var(--floral-white);
+}
+.settings > button:disabled {
+  cursor: auto;
+  background-color: grey;
+  color: rgb(167, 167, 167);
+}
+/* board */
+.board-frame {
+  outline: 5px solid var(--floral-white);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background-color: var(--gunmetal-light);
+
+  --square-factor: 4;
+  --hover-colour: #426160;
+}
+.board {
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, calc(560px / var(--square-factor)));
+  grid-auto-rows: calc(560px / var(--square-factor));
+}
+/* squares */
+.board > div {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  font-size: 100%;
+}
+.board > div.light {
+  background-color: var(--onyx);
+}
+.board > div.dark {
+  background-color: var(--raisin-black);
+}
+.board > div.goal {
+  background-color: #d2c476;
+}
+.board > div.path {
+  background-color: #426160;
+}
+.board > div:not(.knighted):not(.goal):hover {
+  background-color: var(--hover-color);
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  place-content: center;
+  font-weight: 600;
+  background-color: var(--indian-red);
+  color: var(--floral-white);
+}
+
+
+/*# sourceMappingURL=app.css.map*/
