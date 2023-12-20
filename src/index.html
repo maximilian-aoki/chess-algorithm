@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chess Algorithm</title>
+    <title>Speedy Knight</title>
   </head>
   <body>
     <div class="title grid">
@@ -15,7 +15,46 @@
         <p>To get started, select a board size below.</p>
       </div>
     </div>
-    <div class="content grid"></div>
-    <div class="footer grid"></div>
+    <div class="content grid">
+      <div class="settings">
+        <h2>BOARDS</h2>
+        <div>
+          <input type="radio" name="board-options" id="4" value="4" />
+          <label for="4">4 x 4</label>
+        </div>
+        <div>
+          <input type="radio" name="board-options" id="8" value="8" />
+          <label for="8">8 x 8</label>
+        </div>
+        <div>
+          <input type="radio" name="board-options" id="16" value="16" />
+          <label for="16">16 x 16</label>
+        </div>
+        <button type="button">RESET</button>
+      </div>
+      <div class="board-frame">
+        <div class="board grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer grid">
+      <p>2023 Copyright Maximilian Aoki</p>
+    </div>
   </body>
 </html>
