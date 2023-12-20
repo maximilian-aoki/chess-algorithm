@@ -3,6 +3,7 @@ html {
 
   /* color palette */
   --gunmetal: #1b2432ff;
+  --gunmetal-light: rgb(32, 41, 55);
   --floral-white: #fffcf2ff;
   --floral-grey: rgb(197, 193, 177);
   --raisin-black: #2c2b3cff;
@@ -139,6 +140,7 @@ body {
   outline: 5px solid var(--floral-white);
   border-radius: 0.3rem;
   overflow: hidden;
+  background-color: var(--gunmetal-light);
 
   --square-factor: 4;
 }
@@ -147,6 +149,7 @@ body {
   height: 100%;
   grid-template-columns: repeat(auto-fit, calc(560px / var(--square-factor)));
 }
+/* squares */
 .board > div.light {
   background-color: var(--onyx);
 }

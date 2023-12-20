@@ -7,6 +7,7 @@ import Board from './assets/Board';
 import * as Events from './assets/events';
 import OptionsUI from './assets/optionsUI';
 import BoardUI from './assets/boardUI';
+import MessageUI from './assets/messageUI';
 
 // TEST
 const board = new Board();

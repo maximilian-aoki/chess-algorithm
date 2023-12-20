@@ -1,10 +1,13 @@
 import * as Events from './events';
+import getBoardGraph from './graph';
 
 const BoardUI = (() => {
   // state
   const state = {
     boardGraph: null,
     isSquareLight: false,
+    startVertex: null,
+    endVertex: null,
   };
 
   // cache dom elements
@@ -37,6 +40,7 @@ const BoardUI = (() => {
     }
 
     boardFrame.appendChild(board);
+    state.boardGraph = getBoardGraph(boardSize);
   }
 
   function getSquareColour() {
