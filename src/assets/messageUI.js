@@ -16,7 +16,7 @@ const MessageUI = (() => {
     });
 
     const para = document.createElement('p');
-    para.innerText = 'Place the knight anywhere on the board.';
+    para.innerText = 'Place a knight anywhere on the board.';
 
     messages.appendChild(para);
   }
@@ -32,17 +32,18 @@ const MessageUI = (() => {
     messages.appendChild(para);
   }
 
-  function pathCalculatedMessage() {
+  function pathCalculatedMessage(pathLength) {
     [...messages.children].forEach((child) => {
       messages.removeChild(child);
     });
 
+    const plural = pathLength > 1 ? 's' : '';
+
     const para1 = document.createElement('p');
     const para2 = document.createElement('p');
-    para1.innerText =
-      'It takes [x] moves for the knight to get from start to end.';
+    para1.innerText = `It takes at least ${pathLength} move${plural} for the knight to get from start to end.`;
     para2.innerText =
-      'To try again, clear the current board or select a new board.';
+      'Try a different square, reset the current board or select a new board.';
 
     messages.appendChild(para1);
     messages.appendChild(para2);
